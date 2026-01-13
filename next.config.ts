@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* 1. Allow images from external links (like Supabase/Dicebear) */
   images: {
     remotePatterns: [
       {
@@ -10,14 +9,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-
-  /* 2. IGNORE Build Errors (Crucial for Vercel Deployment) */
-  // This allows the build to finish even if there are small type errors
+  
+  // This is still valid and will prevent TypeScript errors from stopping the build
   typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
 };
 
